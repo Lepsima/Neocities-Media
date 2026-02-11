@@ -18,7 +18,7 @@ jobs:
 
       - name: Generate JSON meme list
         run: |
-          ls | jq -R . | jq -s '{ files: map(select(. != "index.html" and . != "memes.js" and . != "memes.json")) }' > memes.json
+          ls | jq -R . | jq -s '{ files: map(select(. != "index.html" and . != "memes.js" and . != "memes.json" and . != "CNAME")) }' > memes.json
 
       - name: Commit and push changes
         uses: stefanzweifel/git-auto-commit-action@v5
